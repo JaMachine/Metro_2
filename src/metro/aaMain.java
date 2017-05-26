@@ -4,6 +4,15 @@ public class aaMain {
 
 	public static void main(String[] args) {
 
+
+		
+		Line.startStations();
+		System.out.println(Line.blueStations.size());
+		
+
+//		Db.insertInto("insert into stations (name,cash,line)values('Lesnaia',0,2)");
+
+
 		//
 
 		//

@@ -29,4 +29,41 @@ public class Db {
 
 	}
 
+	public static void insertInto(String q) {
+
+		try {
+			Connection con = DriverManager.getConnection(url, passNlog, passNlog);
+
+			Statement stm = con.createStatement();
+
+			stm.executeUpdate(q);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	public static String getStationName(int i) {
+		String result = "";
+		try {
+			Connection con = DriverManager.getConnection(url, passNlog, passNlog);
+
+			Statement stm = con.createStatement();
+
+			ResultSet res = stm.executeQuery("select name from metro_db.stations where id = " + i);
+
+			while (res.next()) {
+				result = result + res.getString("name");
+			}
+
+		}
+
+		catch (Exception e) {
+			e.printStackTrace();
+
+		}
+
+		return result;
+	}
+
 }
