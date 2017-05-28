@@ -31,7 +31,7 @@ public class Station {
 
 	@Override
 	public String toString() {
-		return "Station [name=" + name + ", id=" + id + ", cash=" + cash + "]";
+		return "Station [name=" + name + ", id=" + stationId + ", cash=" + cash + "]";
 	}
 
 }

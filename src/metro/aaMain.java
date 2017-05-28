@@ -5,12 +5,16 @@ public class aaMain {
 	public static void main(String[] args) {
 
 
-		
+
 		Line.startStations();
-		System.out.println(Line.blueStations.size());
+		System.out.println(Line.blueStations.get(1-1).toString());
+		System.out.println(Line.greenStations.get(1-1).toString());
+		System.out.println(Line.redStations.get(1-1).toString());
+//		System.out.println(Db.getCount (1));
 		
 
-//		Db.insertInto("insert into stations (name,cash,line)values('Lesnaia',0,2)");
+//		Db.insertInto("insert into stations (name,cash,line)values('Akadem Gorodok',0,3)");
+
 
 
 		//

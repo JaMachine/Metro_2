@@ -66,4 +66,47 @@ public class Db {
 		return result;
 	}
 
+	public static int getCount(int i) {
+		int result = 0;
+		try {
+			Connection con = DriverManager.getConnection(url, passNlog, passNlog);
+
+			Statement stm = con.createStatement();
+
+			ResultSet res = stm.executeQuery("select count(*) from metro_db.stations where line = " + i);
+			while (res.next()) {
+				result = result + res.getInt("count(*)");
+			}
+
+		}
+
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+
+	public static int getMinId(int i) {
+		int result = 0;
+
+		try {
+			Connection con = DriverManager.getConnection(url, passNlog, passNlog);
+
+			Statement stm = con.createStatement();
+
+			ResultSet res = stm.executeQuery("select min(id) from metro_db.stations where line = " + i);
+			while (res.next()) {
+				result = result + res.getInt("min(id)");
+			}
+
+		}
+
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return result;
+
+	}
+
 }
