@@ -9,6 +9,7 @@ public class Station {
 	private int stationId;
 	private long cash = 0;
 	ArrayList<Passenger> passengers = new ArrayList<>();
+	ArrayList<Passenger> lobby = new ArrayList<>();
 
 	public Station(String name) {
 		id++;
