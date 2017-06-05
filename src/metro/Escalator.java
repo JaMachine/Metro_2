@@ -1,6 +1,11 @@
 package metro;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class Escalator implements Runnable {
+
+	public static final Logger log = LogManager.getLogger("Escalator");
 
 	Station s;
 	int id;
@@ -16,17 +21,17 @@ public class Escalator implements Runnable {
 		while (true) {
 
 			try {
-				Thread.sleep(100);
+				Thread.sleep(4000);
 			} catch (InterruptedException e) {
-				e.printStackTrace();
+				log.catching(e);
 			}
 			if (!s.lobby.isEmpty()) {
 
 				Passenger p = s.lobby.remove(0);
 				s.passengers.add(p);
-
-				System.out.println("НА ЭСКАЛАТОРЕ "+id+" ПАСАЖИР  "+p.name + p.hashCode());
-			} 
+				log.info("НА ЭСКАЛАТОРЕ " + id + " ПАСАЖИР  " + p.name + p.hashCode());
+				System.out.println("НА ЭСКАЛАТОРЕ " + id + " ПАСАЖИР  " + p.name + p.hashCode());
+			}
 		}
 
 	}
