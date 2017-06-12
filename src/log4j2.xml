@@ -73,13 +73,15 @@
 			<AppenderRef ref="console_appender_all" />
 		</Root>
 		<!-- module 1 loggers -->
-		<Logger name="zzzz" additivity="TRUE"
-			level="ALL">
+		<Logger name="Escalator" additivity="TRUE" level="ALL">
 			<AppenderRef ref="module_1_appender_1_all" level="ALL" />
 			<AppenderRef ref="module_1_appender_2_errors" level="ERROR" />
 		</Logger>
-				<Logger name="Escalator" additivity="TRUE"
-			level="ALL">
+		<Logger name="Lobby" additivity="TRUE" level="ALL">
+			<AppenderRef ref="module_1_appender_1_all" level="ALL" />
+			<AppenderRef ref="module_1_appender_2_errors" level="ERROR" />
+		</Logger>
+		<Logger name="Exc" additivity="TRUE" level="ALL">
 			<AppenderRef ref="module_1_appender_1_all" level="ALL" />
 			<AppenderRef ref="module_1_appender_2_errors" level="ERROR" />
 		</Logger>

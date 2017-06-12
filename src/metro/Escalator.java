@@ -21,17 +21,25 @@ public class Escalator implements Runnable {
 		while (true) {
 
 			try {
-				Thread.sleep(4000);
+				Thread.sleep(1000);
+
+				s.lobbyLock.lock();
+
+				if (!s.lobby.isEmpty()) {
+
+					Passenger p = s.lobby.remove(0);
+					s.passengers.add(p);
+					log.info("НА ЭСКАЛАТОРЕ " + id + " ПАСАЖИР  " + p.name + p.hashCode());
+					System.out.println("НА ЭСКАЛАТОРЕ " + id + " ПАСАЖИР  " + p.name + p.hashCode());
+				} else {
+					s.condition.await();
+				}
 			} catch (InterruptedException e) {
 				log.catching(e);
+			} finally {
+				s.lobbyLock.unlock();
 			}
-			if (!s.lobby.isEmpty()) {
 
-				Passenger p = s.lobby.remove(0);
-				s.passengers.add(p);
-				log.info("НА ЭСКАЛАТОРЕ " + id + " ПАСАЖИР  " + p.name + p.hashCode());
-				System.out.println("НА ЭСКАЛАТОРЕ " + id + " ПАСАЖИР  " + p.name + p.hashCode());
-			}
 		}
 
 	}

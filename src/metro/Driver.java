@@ -27,9 +27,8 @@ public class Driver {
 	public void rndExp() {
 		Random r = new Random();
 
-		this.exp += r.nextInt(20) - 15;
-		if (exp < 0)
-			this.exp = 0;
+		this.exp += r.nextInt(20);
+
 
 	}
 
