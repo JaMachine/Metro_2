@@ -10,7 +10,7 @@ public class Line {
 
 	public Line(String name) {
 		this.name = name;
-		this.lineTrains= new LinkedList<>();
+		this.lineTrains= new LinkedList<Train>();
 		this.lineStations = new LinkedList<Station>();
 		
 	}

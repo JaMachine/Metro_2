@@ -11,9 +11,9 @@ public class Wagon {
 	public Wagon(boolean m) {
 		// this.m = m;
 		if (m == true)
-			c = 340;
+			c = 2;   //  было 340
 		else
-			c = 350;
+			c = 3;  // было  350
 	}
 
 	public int getC() {

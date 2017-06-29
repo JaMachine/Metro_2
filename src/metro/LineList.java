@@ -7,9 +7,9 @@ public class LineList {
 	// 2 = green
 	// 3 = red
 
-	public static ArrayList<Station> blueStations = new ArrayList<>();
-	public static ArrayList<Station> greenStations = new ArrayList<>();
-	public static ArrayList<Station> redStations = new ArrayList<>();
+	public static ArrayList<Station> blueStations = new ArrayList<Station>();
+	public static ArrayList<Station> greenStations = new ArrayList<Station>();
+	public static ArrayList<Station> redStations = new ArrayList<Station>();
 
 	public static void startStations() {
 		for (int i = Db.getMinId(1); i <= (Db.getCount(1)) + (Db.getMinId(1)) - (1); i++) {

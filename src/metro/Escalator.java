@@ -15,7 +15,6 @@ public class Escalator implements Runnable {
 		this.s = s;
 	}
 
-	@Override
 	public void run() {
 
 		while (true) {
@@ -30,7 +29,7 @@ public class Escalator implements Runnable {
 					Passenger p = s.lobby.remove(0);
 					s.passengers.add(p);
 					log.info("НА ЭСКАЛАТОРЕ " + id + " ПАСАЖИР  " + p.name + p.hashCode());
-					System.out.println("НА ЭСКАЛАТОРЕ " + id + " ПАСАЖИР  " + p.name + p.hashCode());
+					//System.out.println("НА ЭСКАЛАТОРЕ " + id + " ПАСАЖИР  " + p.name + p.hashCode());
 				} else {
 					s.condition.await();
 				}
